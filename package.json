@@ -1,0 +1,24 @@
+{
+  "name": "ton3l_site-master",
+  "version": "1.0.0",
+  "description": "Website",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.1",
+    "@types/socket.io": "^2.1.2",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "http": "0.0.0",
+    "path": "^0.12.7",
+    "socket.io": "^2.2.0",
+    "tsc": "^1.20150623.0",
+    "typescript": "^3.6.2"
+  }
+}
