@@ -26,7 +26,7 @@ app.use(body_parser_1.default.json());
 app.use("/client", express_1.default.static(path.join(__dirname, "client")));
 // Redirect root directory to the page with the default of species data
 app.get("/", function (req, res) {
-    res.redirect("client/index.html");
+    res.redirect("client/");
 });
 // Which port to use
 const port = process.env.PORT || "3000";
