@@ -19,6 +19,11 @@ app.use(bodyParser.json());
 // This maps the /build/public directory to the /public path
 app.use("/client", express.static(path.join(__dirname, "client")));
 
+// Redirect root directory to the page with the default of species data
+app.get("/", function (req, res) {
+  res.redirect("client/index.html");
+});
+
 app.use(function(req, res, next){
   res.status(404);
 
@@ -32,10 +37,7 @@ app.use(function(req, res, next){
   res.type('txt').send('UwU what\'s this?');
 });
 
-// Redirect root directory to the page with the default of species data
-app.get("/", function (req, res) {
-  res.redirect("client/index.html");
-});
+
 
 // Which port to use
 const port: string = process.env.PORT || "3000";
