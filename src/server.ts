@@ -25,15 +25,16 @@ app.get("/", function (req, res) {
 });
 
 app.get('*', function(req, res){
-  res.status(404).send('what???');
-  /*// respond with html page
+   /*// respond with html page
   if (req.accepts('html')) {
     res.render('404', { url: req.url });
     return;
   }
   */
+ 
+  
   // default to plain-text. send()
-  res.type('txt').send('UwU what\'s this?');
+  res.status(404).send('GIGIIIIIIIIBBBBBBYYYYYYYYYYY');
 });
 
 
