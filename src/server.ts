@@ -34,7 +34,7 @@ app.get('*', function(req, res){
  
   
   // default to plain-text. send()
-  res.status(404).send('GIGIIIIIIIIBBBBBBYYYYYYYYYYY');
+  res.status(404).send('UwU What\s this? S-senpai e-exposed my 404 *shy shrug*. I hope my senpai will still LOVE ME! *nuzzles*");
 });
 
 
