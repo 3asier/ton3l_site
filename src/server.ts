@@ -24,9 +24,8 @@ app.get("/", function (req, res) {
   res.redirect("client/index.html");
 });
 
-app.use(function(req, res, next){
-  res.status(404);
-
+app.get('*', function(req, res){
+  res.status(404).send('what???');
   /*// respond with html page
   if (req.accepts('html')) {
     res.render('404', { url: req.url });
