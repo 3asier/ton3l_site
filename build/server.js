@@ -23,7 +23,24 @@ const io = socket_io_1.default(httpApp);
 // This enables routes expection JSON data to access it as req.body
 app.use(body_parser_1.default.json());
 // This maps the /build/public directory to the /public path
-app.use("/client", express_1.default.static(path.join(__dirname, "/client")));
+app.use("/client", express_1.default.static(path.join(__dirname, "client")));
+app.use(function (req, res, next) {
+    res.status(404);
+    /*// respond with html page
+    if (req.accepts('html')) {
+      res.render('404', { url: req.url });
+      return;
+    }
+  
+    // respond with json
+    if (req.accepts('json')) {
+      res.send({ error: 'Not found' });
+      return;
+    }
+    */
+    // default to plain-text. send()
+    res.type('txt').send('UwU what\'s this?');
+});
 // Redirect root directory to the page with the default of species data
 app.get("/", function (req, res) {
     res.redirect("client/index.html");
