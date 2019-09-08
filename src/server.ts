@@ -24,6 +24,11 @@ app.get("/", function (req, res) {
   res.redirect("client/index.html");
 });
 
+app.get("/gibby", function (req, res) {
+  res.sendfile("build/client/res/gibby.jpg");
+});
+
+
 app.get('*', function(req, res){
    /*// respond with html page
   if (req.accepts('html')) {
