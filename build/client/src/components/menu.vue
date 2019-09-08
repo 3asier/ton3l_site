@@ -1,4 +1,5 @@
 <template>
+<div id="menu-bar">
  <div id="logo">
     <T class="logo-letter" />
     <O class="logo-letter" />
@@ -6,6 +7,7 @@
     <E class="logo-letter" />
     <L class="logo-letter" />
   </div>
+</div>
 </template>
 
 <script>
