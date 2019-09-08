@@ -1,10 +1,10 @@
 <template>
- <div>
-    <T class="icon" />
-    <O class="icon" />
-    <N class="icon" />
-    <E class="icon" />
-    <L class="icon" />
+ <div id="logo">
+    <T class="logo-letter" />
+    <O class="logo-letter" />
+    <N class="logo-letter" />
+    <E class="logo-letter" />
+    <L class="logo-letter" />
   </div>
 </template>
 
