@@ -4,14 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --config webpack-config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "vue": "^2.6.10",
+    "vue-loader": "^15.7.1",
+    "vue-svg-loader": "^0.12.0",
+    "vue-template-compiler": "^2.6.10",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.8"
   },
-  "dependencies": {}
+  "dependencies": {
+    "css-loader": "^3.2.0",
+    "vue-style-loader": "^4.1.2"
+  }
 }

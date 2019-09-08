@@ -1,17 +1,7 @@
-$(document).ready(() => {
-    
-    let name = "TON3L"
+import Vue from 'vue';
+import Menu from "./components/menu.vue";
 
-
-    $(".sendRequest").click(() => {
-        $.post(
-            "http://ton3l.com/php/mail.php",
-            {
-                name: name
-            },
-            (data, status, error) => {
-                alert(data);
-            }
-        );
-    });
-});
+new Vue({
+    el: "#menu",
+    render: h => h(Menu)
+})
