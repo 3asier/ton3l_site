@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 
 
 // This maps the /build/public directory to the /public path
-app.use("/client", express.static(path.join(__dirname, "client")));
+app.use("/", express.static(path.join(__dirname, "/client")));
 
 // Redirect root directory to the page with the default of species data
 app.get("/", function (req, res) {
