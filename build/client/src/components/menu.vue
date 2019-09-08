@@ -1,29 +1,15 @@
 <template>
 <div id="menu-bar">
- <div id="logo">
-    <T class="logo-letter" />
-    <O class="logo-letter" />
-    <N class="logo-letter" />
-    <E class="logo-letter" />
-    <L class="logo-letter" />
-  </div>
+    <Logo />
 </div>
 </template>
 
 <script>
-import T from '../../res/T.svg';
-import O from '../../res/O.svg';
-import N from '../../res/N.svg';
-import E from '../../res/3.svg';
-import L from '../../res/L.svg';
+import Logo from "./logo.vue"
 
 export default {
     components: {
-        T,
-        O,
-        N,
-        E,
-        L
+      Logo
     },
     data() {
         return {
