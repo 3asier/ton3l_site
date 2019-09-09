@@ -7,9 +7,9 @@
    xmlns="http://www.w3.org/2000/svg"
    id="svg8"
    version="1.1"
-   viewBox="0 0 87 90"
+   viewBox="0 0 75 90"
    height="90mm"
-   width="87mm">
+   width="75mm">
   <defs
      id="defs2" />
   <metadata
@@ -26,10 +26,8 @@
   </metadata>
   <g>
     <path
-       id="path845"
-       d="m 0,0 h 23 l 64,79 v 11 h -23 l -64,-79 z
-          m 64,0 h 23 v 45 l -23,-28 z
-          m -64,45 l 23,28 v 17 h -23 z"
-       style="fill:#b2b2b2;fill-opacity:1;stroke:#b2b2b2;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+       id="path853"
+       d="m 5,0 h 65 v 17 l -18,18 c 0,0 23,0 23,23 c 0,0 0,32 -40,32 c 0,0 -18,0 -35,-10 l 10,-19 c 0,0 8,8 23,8 c 0,0 18,0 18,-9 c 0,0 0,-9 -25,-9 v-17 l 15,-15 h-36 z"
+       style="fill:#707070;fill-opacity:1;stroke:#707070;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
   </g>
 </svg>
