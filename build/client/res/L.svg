@@ -26,8 +26,8 @@
   </metadata>
   <g>
     <path
-       id="path855"
+       class="logo_path logo_l"
        d="m 0,0 h 26 v 70 h 42 v 20 h -70 z"
-       style="fill:#232223;fill-opacity:1;stroke:#232223;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+       style="fill:#232223;fill-opacity:1;stroke:#fefefe;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
   </g>
 </svg>

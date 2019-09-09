@@ -26,10 +26,10 @@
   </metadata>
   <g>
     <path
-       id="path845"
+       class="logo_path logo_n"
        d="m 0,0 h 23 l 64,79 v 11 h -23 l -64,-79 z
           m 64,0 h 23 v 45 l -23,-28 z
           m -64,45 l 23,28 v 17 h -23 z"
-       style="fill:#b2b2b2;fill-opacity:1;stroke:#b2b2b2;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+       style="fill:#b2b2b2;fill-opacity:1;stroke:#b2b2b2;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
   </g>
 </svg>
