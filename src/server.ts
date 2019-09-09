@@ -29,15 +29,15 @@ app.get("/gibby", function (req, res) {
 });
 
 
-app.get('*', function(req, res){
-   /*// respond with html page
-  if (req.accepts('html')) {
-    res.render('404', { url: req.url });
-    return;
-  }
-  */
- 
-  
+app.get('*', function (req, res) {
+  /*// respond with html page
+ if (req.accepts('html')) {
+   res.render('404', { url: req.url });
+   return;
+ }
+ */
+
+
   // default to plain-text. send()
   res.status(404).send('UwU What\s this? S-senpai e-exposed my 404 *shy shrug*. I hope my senpai will still LOVE ME! *nuzzles*');
 });
