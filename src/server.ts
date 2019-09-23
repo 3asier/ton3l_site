@@ -28,6 +28,10 @@ app.get("/gibby", function (req, res) {
   res.sendfile("build/client/res/gibby.jpg");
 });
 
+app.get("/wildlife_id", (req, res) => {
+  res.redirect("build/client/res/wildlife_id/index.html");
+});
+
 
 app.get('*', function (req, res) {
   /*// respond with html page
