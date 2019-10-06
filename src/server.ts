@@ -4,36 +4,56 @@ import http from 'http';
 import SocketIO from 'socket.io';
 import bodyParser from "body-parser";
 import * as path from "path";
-
+import bouncy from "bouncy";
 
 //Set up sockets and server
-const app = express();
-const httpApp = new http.Server(app);
-const io = SocketIO(httpApp);
+const ton3lServer = express();
+const httpton3lServer = new http.Server(ton3lServer);
+const io = SocketIO(httpton3lServer);
 
+const swillServer = express()
+const httpSwillServer = new http.Server(swillServer)
+const swillPort: string = process.env.PORT || "8002";
+
+swillServer.use("/", express.static(path.join(__dirname, "/swill")));
+httpSwillServer.listen(8002, () => {
+  console.log("Swill Server is listening on port: " + swillPort)
+})
+
+
+const bouncyServer = bouncy((req: any, res: any, bounce: any) => {
+  if (req.headers.host === 'ton3l.com') {
+    bounce(8001)
+  } else if (req.headers.host === 'issamwilliamsonhot.com') {
+    bounce(8002)
+  } else {
+    bounce(8002)
+  }
+})
+bouncyServer.listen(3000)
 
 // This enables routes expection JSON data to access it as req.body
-app.use(bodyParser.json());
+ton3lServer.use(bodyParser.json());
 
 
 // This maps the /build/public directory to the /public path
-app.use("/", express.static(path.join(__dirname, "/client")));
+ton3lServer.use("/", express.static(path.join(__dirname, "/client")));
 
 // Redirect root directory to the page with the default of species data
-app.get("/", function (req, res) {
+ton3lServer.get("/", function (req, res) {
   res.redirect("client/index.html");
 });
 
-app.get("/gibby", function (req, res) {
+ton3lServer.get("/gibby", function (req, res) {
   res.sendfile("build/client/res/gibby.jpg");
 });
 
-app.get("/wildlife_id", (req, res) => {
+ton3lServer.get("/wildlife_id", (req, res) => {
   res.redirect("build/client/res/wildlife_id/index.html");
 });
 
 
-app.get('*', function (req, res) {
+ton3lServer.get('*', function (req, res) {
   /*// respond with html page
  if (req.accepts('html')) {
    res.render('404', { url: req.url });
@@ -49,7 +69,7 @@ app.get('*', function (req, res) {
 
 
 // Which port to use
-const port: string = process.env.PORT || "3000";
+const port: string = process.env.PORT || "8001";
 
 /*
  * Start Socket Connections between server and client
@@ -67,10 +87,10 @@ io.sockets.on('connection', (socket) => {
 /*
  * Start the server
  */
-httpApp.listen(port, () => {
-  console.log("App running on port %d", port);
+httpton3lServer.listen(port, () => {
+  console.log("ton3lServer running on port %d", port);
 });
 
-export default httpApp
+export default httpton3lServer
 
 
