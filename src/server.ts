@@ -11,6 +11,9 @@ const ton3lServer = express();
 const httpton3lServer = new http.Server(ton3lServer);
 const io = SocketIO(httpton3lServer);
 
+// Master Server port
+const masterPort: string = process.env.PORT || "80";
+
 const swillServer = express()
 const httpSwillServer = new http.Server(swillServer)
 const swillPort: string = process.env.PORT || "8002";
@@ -24,13 +27,15 @@ httpSwillServer.listen(8002, () => {
 const bouncyServer = bouncy((req: any, res: any, bounce: any) => {
   if (req.headers.host === 'ton3l.com') {
     bounce(8001)
+  } else if (req.headers.host === 'twf.ton3l.com') {
+    bounce(8005)
   } else if (req.headers.host === 'issamwilliamsonhot.com') {
     bounce(8002)
   } else {
     bounce(8002)
   }
 })
-bouncyServer.listen(3000)
+bouncyServer.listen(masterPort)
 
 // This enables routes expection JSON data to access it as req.body
 ton3lServer.use(bodyParser.json());

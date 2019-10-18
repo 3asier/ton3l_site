@@ -21,6 +21,8 @@ const bouncy_1 = __importDefault(require("bouncy"));
 const ton3lServer = express_1.default();
 const httpton3lServer = new http_1.default.Server(ton3lServer);
 const io = socket_io_1.default(httpton3lServer);
+// Master Server port
+const masterPort = process.env.PORT || "80";
 const swillServer = express_1.default();
 const httpSwillServer = new http_1.default.Server(swillServer);
 const swillPort = process.env.PORT || "8002";
@@ -32,6 +34,9 @@ const bouncyServer = bouncy_1.default((req, res, bounce) => {
     if (req.headers.host === 'ton3l.com') {
         bounce(8001);
     }
+    else if (req.headers.host === 'twf.ton3l.com') {
+        bounce(8005);
+    }
     else if (req.headers.host === 'issamwilliamsonhot.com') {
         bounce(8002);
     }
@@ -39,7 +44,7 @@ const bouncyServer = bouncy_1.default((req, res, bounce) => {
         bounce(8002);
     }
 });
-bouncyServer.listen(3000);
+bouncyServer.listen(masterPort);
 // This enables routes expection JSON data to access it as req.body
 ton3lServer.use(body_parser_1.default.json());
 // This maps the /build/public directory to the /public path
